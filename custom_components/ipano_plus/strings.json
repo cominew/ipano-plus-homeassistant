@@ -1,0 +1,41 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configure iPano Plus",
+        "description": "Enter the connection details for your iPano device.",
+        "data": {
+          "host": "Host/IP Address",
+          "port": "Port",
+          "name": "Device Name"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to iPano. Please check the host and port.",
+      "invalid_host": "Invalid host address.",
+      "unknown": "Unknown error occurred."
+    },
+    "abort": {
+      "already_configured": "This iPano device is already configured."
+    }
+  },
+  "services": {
+    "wake_screen": {
+      "name": "Wake Screen",
+      "description": "Wake up the iPano display."
+    },
+    "set_button_backlight": {
+      "name": "Set Button Backlight",
+      "description": "Control button backlight color."
+    },
+    "control_relay": {
+      "name": "Control Relay",
+      "description": "Control relay on/off."
+    },
+    "start_application": {
+      "name": "Start Application",
+      "description": "Start an application on iPano."
+    }
+  }
+}
