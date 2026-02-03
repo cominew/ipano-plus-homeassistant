@@ -1,31 +1,44 @@
-<p align="center">
-  <img src="./logo.svg" alt="iPano Plus logo" width="160" />
-</p>
+<div align="center">
 
-# iPano Plus Home Assistant Integration
+# <img src="https://raw.githubusercontent.com/Templarian/MaterialDesign/master/svg/wall-sconce-flat.svg" width="48" height="48"> iPano Plus Wall Panel
 
-[![Add to HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Cominew&repository=ipano-plus-homeassistant&category=integration)
-[![Release](https://img.shields.io/github/v/release/Cominew/ipano-plus-homeassistant)](https://github.com/Cominew/ipano-plus-homeassistant/releases)
-[![License](https://img.shields.io/github/license/Cominew/ipano-plus-homeassistant)](LICENSE)
+**Home Assistant integration for 6-inch iPano Plus touchscreen wall panels**
 
-A free integration for iPano Plus 6‑inch in‑wall touch panels (PD680 series).
+[![GitHub release](https://img.shields.io/github/release/cominew/ipano-plus-homeassistant.svg)](https://github.com/cominew/ipano-plus-homeassistant/releases)
+[![GitHub license](https://img.shields.io/github/license/cominew/ipano-plus-homeassistant)](LICENSE)
+[![hacs_badge](https://img.shields.io/badge/HACS-Custom-orange.svg)](https://github.com/hacs/integration)
+![Maintenance](https://img.shields.io/badge/Maintained%3F-Yes-green.svg)
+[![GitHub issues](https://img.shields.io/github/issues/cominew/ipano-plus-homeassistant)](https://github.com/cominew/ipano-plus-homeassistant/issues)
+[![GitHub stars](https://img.shields.io/github/stars/cominew/ipano-plus-homeassistant)](https://github.com/cominew/ipano-plus-homeassistant/stargazers)
 
-Overview
-- Exposes physical buttons as binary sensors and events
-- Control backlights (set, pulse, fade, breathing)
-- Relay switches (1–6 depending on base)
-- Proximity sensor and screen wake control
-- UI config flow and Home Assistant services
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=cominew&repository=ipano-plus-homeassistant&category=integration)
 
-Installation
-- Via HACS (recommended): Add repository in HACS (Integration category) using the badge above.
-- Manual: Copy `custom_components/ipano_plus/` into `config/custom_components/` and restart Home Assistant.
+</div>
+
+## ✨ Features
+
+| Feature | Description |
+|---------|-------------|
+| 🎛️ **4 Physical Buttons** | Real-time button state with backlight control (white/yellow) |
+| ⚡ **2-6 Relays** | Control AC devices (2 for single base, 6 for dual base) |
+| 👁️ **Proximity Sensor** | Auto-wake screen when approaching |
+| 🎨 **Backlight Effects** | Pulse, fade, and breathing effects |
+| 📱 **Touch Screen Control** | Wake screen remotely |
+| 🔄 **Multiple Panels** | Support for multiple iPano Plus panels |
+
+## 🚀 Quick Install
+
+1. **Click the HACS button above** → Opens directly in Home Assistant
+2. **Search for "iPano Plus"**
+3. **Click Install**
+4. **Restart Home Assistant**
+5. **Add via Settings → Devices & Services**
 
 Documentation
-- Full documentation: docs/README.md
+- [Full Installation Guide](docs/README.md#installation)
 
 Screenshots
-- (Add screenshots to ./screenshots/ and reference them here)
+
 <p float="left">
   <img src="./screenshots/01-dashboard.png" width="420" alt="Dashboard placeholder" />
   <img src="./screenshots/02-services.png" width="420" alt="Services placeholder" />

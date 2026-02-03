@@ -1,17 +1,46 @@
-<p align="center">
-  <img src="./logo.svg" alt="iPano Plus logo" width="140" />
-</p>
-
-[![Add to HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Cominew&repository=ipano-plus-homeassistant&category=integration)
-[![Release](https://img.shields.io/github/v/release/Cominew/ipano-plus-homeassistant)](https://github.com/Cominew/ipano-plus-homeassistant/releases)
-[![License](https://img.shields.io/github/license/Cominew/ipano-plus-homeassistant)](LICENSE)
-
 ---
-# iPano Plus Home Assistant Integration
+# iPano Plus Wall Panel
+---
 
-A Home Assistant integration that adds support for 6‑inch iPano Plus in‑wall touchscreen panels — exposes buttons, backlights, relays and proximity sensor. Install via HACS (recommended) or manually by copying `custom_components/ipano_plus/`.
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Templarian/MaterialDesign/master/svg/wall-sconce-flat.svg" width="100" height="100">
+  
+  # iPano Plus Wall Panel
+  
+  **Professional Home Assistant integration for 6-inch iPano Plus touchscreen wall panels**
+</div>
 
-Quick install:
-- HACS → Integrations → Add custom repository → Enter `https://github.com/Cominew/ipano-plus-homeassistant` (Integration)
+## 🎯 What This Integration Does
+
+Connect your iPano Plus wall panels to Home Assistant with full control over:
+
+- **4 physical buttons** with customizable backlight colors
+- **2-6 relays** for controlling lights, fans, and appliances
+- **Proximity sensor** for automatic screen wake
+- **Screen control** - wake up remotely
+- **Multiple panel support** - control several panels from one interface
+
+## 📋 Requirements
+
+- iPano Plus 6-inch wall panel (PD680)
+- Home Assistant 2024.1 or newer
+- Panel connected to your network (WiFi or Ethernet)
+- TCP port 3124 accessible
+
+## ⚡ Quick Start
+
+1. **Install via HACS** (button below)
+2. **Add integration** via Settings → Devices & Services
+3. **Enter panel IP** (found in panel settings)
+4. **Start controlling!**
+
+[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=cominew&repository=ipano-plus-homeassistant&category=integration)
+
+## 🔗 Useful Links
+
+- [Full Documentation](docs/README.md)
+- [Example Automations](docs/automations.md)
+- [Troubleshooting Guide](docs/troubleshooting.md)
+- [Report an Issue](https://github.com/cominew/ipano-plus-homeassistant/issues)
 
 See full documentation in the repository README or docs/README.md.
