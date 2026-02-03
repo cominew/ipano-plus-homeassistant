@@ -1,3 +1,5 @@
+<img width="454" height="235" alt="baner" src="https://github.com/user-attachments/assets/48db0dac-c173-4efd-9b14-0ca00f12b0c0" />
+
 # iPano Plus Home Assistant Integration
 
 <div align="center">
