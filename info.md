@@ -10,33 +10,20 @@
   **Professional Home Assistant integration for 6-inch iPano Plus touchscreen wall panels**
 </div>
 
-## 🎯 What This Integration Does
+---
 
-Connect your iPano Plus wall panels to Home Assistant with full control over:
+# iPano Plus — Home Assistant Integration
 
-- **4 physical buttons** with customizable backlight colors
-- **2-6 relays** for controlling lights, fans, and appliances
-- **Proximity sensor** for automatic screen wake
-- **Screen control** - wake up remotely
-- **Multiple panel support** - control several panels from one interface
+A lightweight integration for iPano Plus 6" in‑wall panels (PD680). Exposes buttons, backlights, relays and proximity sensor and provides services for backlight effects and screen control.
 
-## 📋 Requirements
+Quick install:
+- Install via HACS (Integration category) using the badge above (recommended).
+- Manual: copy `custom_components/ipano_plus/` to `config/custom_components/` then restart Home Assistant.
 
-- iPano Plus 6-inch wall panel (PD680)
-- Home Assistant 2024.1 or newer
-- Panel connected to your network (WiFi or Ethernet)
-- TCP port 3124 accessible
+For full documentation and examples see: [docs/README.md](./docs/README.md)
 
-## ⚡ Quick Start
-
-1. **Install via HACS** (button below)
-2. **Add integration** via Settings → Devices & Services
-3. **Enter panel IP** (found in panel settings)
-4. **Start controlling!**
-
-[![Open your Home Assistant instance and open a repository inside the Home Assistant Community Store.](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=cominew&repository=ipano-plus-homeassistant&category=integration)
-
-## 🔗 Useful Links
+Screenshots and usage examples available in the repository.
+A Home Assistant integration that adds support for 6‑inch iPano Plus in‑wall touchscreen panels — exposes buttons, backlights, relays and proximity sensor. Install via HACS (recommended) or manually by copying `custom_components/ipano_plus/`.
 
 - [Full Documentation](docs/README.md)
 - [Example Automations](docs/automations.md)
