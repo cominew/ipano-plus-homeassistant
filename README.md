@@ -13,15 +13,31 @@
 
 </div>
 
-Control your 6-inch iPano Plus wall touchscreen panels with Home Assistant.
+Home Assistant integration for 6-inch iPano Plus touchscreen panels used in testing and evaluation setups.
 
 ## Overview
+
+> This repository provides an experimental Home Assistant integration for iPano Plus panels used during internal testing and community evaluation.
 
 - Exposes physical buttons as binary sensors and fires events for presses
 - Reads and controls button backlights (set, pulse, fade, breathing)
 - Exposes relays as switches (1–2 typical; up to 6 if using dual base)
 - Proximity/motion sensor and screen wake control
 - UI config flow and Home Assistant services
+
+## Integration Demo (Video)
+
+The following video shows a real-world test setup used during development and evaluation of this integration.
+
+It demonstrates:
+- The official Home Assistant Android app running on a 6-inch panel
+- Lovelace dashboards on a PC
+- Physical button events and local relay control
+- Real-time state synchronization across devices
+
+This video is provided for technical reference only and reflects an experimental test environment.
+
+[[https://www.youtube.com/watch?v=YOUR_VIDEO_ID](https://youtu.be/Y6cJNZzwoJM)]
 
 ## Installation
 
@@ -129,6 +145,12 @@ data:
   - Restart Home Assistant and check Logs for detailed messages.
 
 - Check Developer Tools → Events and listen for `ipano_button_pressed` to verify button events are firing.
+
+## Hardware Note
+
+This integration was developed and tested using iPano Plus 6" panels as reference hardware.
+The repository does not include firmware, Android applications, or commercial distribution details.
+Video demonstrations are included for documentation purposes and do not represent a commercial product announcement.
 
 ## Compatibility & Requirements
 
