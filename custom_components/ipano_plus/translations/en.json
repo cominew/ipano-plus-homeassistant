@@ -1,0 +1,15 @@
+{
+  "title": "iPano Plus",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Configure iPano Plus",
+        "data": {
+          "host": "Host/IP Address",
+          "port": "Port",
+          "name": "Device Name"
+        }
+      }
+    }
+  }
+}

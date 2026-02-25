@@ -1,0 +1,18 @@
+# Home Assistant
+.homeassistant/
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+
+# Secrets
+*.secret.yaml
+secrets.yaml

@@ -1,0 +1,12 @@
+{
+  "name": "iPano Plus",
+  "render_readme": true,
+  "filename": "docs/README.md",
+  "domains": ["ipano_plus"],
+  "country": "CN",
+  "homeassistant": "2024.1.0",
+  "persistent_directory": "persistent",
+  "iot_class": "local_push",
+  "icon": "mdi:wall-sconce-flat",
+  "description": "Professional integration for 6-inch iPano Plus touchscreen wall panels. Control buttons, relays, proximity sensor, and backlights from Home Assistant."
+}

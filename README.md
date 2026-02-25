@@ -1,80 +1,166 @@
+<img width="454" height="235" alt="banner" src="https://github.com/user-attachments/assets/48db0dac-c173-4efd-9b14-0ca00f12b0c0" />
+
 # iPano Plus Home Assistant Integration
 
-Totally free Home Assistant integration for the iPano Plus 6‑inch in‑wall touch panel (PD680 / Plus 6‑inch).
+<div align="center">
 
-This integration connects Home Assistant to the panel's TCP service (default port 3124) to expose buttons, backlights, relays and the proximity sensor, and to provide services for backlight effects and screen control.
+[![GitHub release](https://img.shields.io/github/release/Cominew/ipano-plus-homeassistant.svg)](https://github.com/Cominew/ipano-plus-homeassistant/releases)
+[![GitHub license](https://img.shields.io/github/license/Cominew/ipano-plus-homeassistant)](LICENSE)
+[![HACS](https://my.home-assistant.io/badges/hacs_repository.svg)](https://my.home-assistant.io/redirect/hacs_repository/?owner=Cominew&repository=ipano-plus-homeassistant&category=integration)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-Yes-green.svg)](https://github.com/Cominew/ipano-plus-homeassistant/commits/main)
+[![GitHub issues](https://img.shields.io/github/issues/Cominew/ipano-plus-homeassistant)](https://github.com/Cominew/ipano-plus-homeassistant/issues)
+[![GitHub stars](https://img.shields.io/github/stars/Cominew/ipano-plus-homeassistant)](https://github.com/Cominew/ipano-plus-homeassistant/stargazers)
 
-Badges
-- HACS (if you add this repository to HACS)
-- License: MIT
+</div>
 
-Quick links
-- Docs (for HACS): docs/README.md
-- Integration folder: custom_components/ipano_plus/
+Totally free Home Assistant integration for the **iPano Plus 6-inch in-wall touch panel (PD680)**.
+
+This integration connects Home Assistant to the panel’s TCP service (default port **3124**) to expose buttons, relays, proximity sensor, and backlight effects.
+
+---
 
 ## Features
-- Persistent TCP bridge with heartbeat and reconnect
-- Button presses exposed as binary sensors and HA bus events
-- Per-button backlight sensors and services (set, pulse, fade, breathing)
-- Relay switches (1–2 for single base, up to 6 for dual base)
-- Proximity sensor (binary sensor) and screen wake control
-- UI config flow for easy setup
-- Developer-friendly: logs, dispatcher signals, clear service definitions
+
+- Persistent TCP bridge with heartbeat + reconnect
+- Button presses as binary sensors + HA events
+- Backlight control (set / pulse / fade / breathing)
+- Relay switches (1–2 standard, up to 6 dual-base)
+- Proximity sensor + screen wake control
+- UI config flow setup
+- Developer-friendly logs and dispatcher signals
+
+---
+
+## Integration Demo (Video)
+
+https://youtu.be/Y6cJNZzwoJM
+
+---
 
 ## Installation
 
-### Via HACS (recommended)
-1. Add the repository to HACS (Integration category).
-2. Install **iPano Plus** from HACS.
-3. Restart Home Assistant.
-4. Add the integration via **Settings → Devices & Services → Add Integration → iPano Plus**.
+### Option 1 — HACS (Recommended)
+1. Open HACS → Integrations
+2. Add repository:
+   ```
+   https://github.com/Cominew/ipano-plus-homeassistant
+   ```
+3. Category → Integration → Install
+4. Restart Home Assistant
 
-> Note: To appear in HACS, a repository must have proper HACS metadata (this repo contains `.hacs.json` and `info.md`).
+---
 
-### Manual installation
-1. Download the latest release from this repository.
-2. Copy the `custom_components/ipano_plus/` folder into your Home Assistant `config/custom_components/` directory.
-3. Restart Home Assistant.
-4. Add the integration through **Settings → Devices & Services → Add Integration → iPano Plus** and enter the panel IP and port.
+### Option 2 — Manual Install
+1. Download latest release
+2. Copy:
 
-## Getting started
-1. After installation, go to **Settings → Devices & Services**.
-2. Click **Add Integration** and search for **iPano Plus**.
-3. Complete the config flow: provide the panel IP (and optional friendly name). Default port: `3124`.
+```
+custom_components/ipano_plus/
+```
 
-## Entities
-After setup you will see entities for:
-- Binary sensors: iPano Button 1 … Button 4
-- Binary sensor: iPano Proximity
-- Switches: iPano Relay 1 … Relay 2 (or up to 6 on dual-base panels)
-- Sensors: iPano Backlight 1 … Backlight 4 (values: 0=off, 1=white, 2=yellow, 3=both)
+to:
 
-Exact entity ids include the config entry id (unique per installed device). See Settings → Devices → select your iPano → Entities.
+```
+config/custom_components/
+```
 
-## Services (domain: `ipano_plus`)
-- `ipano_plus.wake_screen`
-- `ipano_plus.set_backlight` — `{ "button": 1, "color": "white" }`
-- `ipano_plus.set_all_backlights` — `{ "color": "yellow" }`
-- `ipano_plus.pulse_backlight` — `{ "button": 2, "color": "white", "times": 3, "duration": 0.5 }`
-- `ipano_plus.fade_backlight`
-- `ipano_plus.breathing_backlight`
-- `ipano_plus.control_relay` — `{ "relay": 1, "state": "on" }`
+3. Restart Home Assistant
 
-See `custom_components/ipano_plus/services.yaml` for UI descriptions.
+---
+
+## Getting Started
+
+1. Settings → Devices & Services  
+2. Add Integration → **iPano Plus**  
+3. Enter panel IP + port (default **3124**)
+
+---
+
+## Entities Created
+
+After setup:
+
+**Buttons**
+- iPano Button 1–4 (binary sensors)
+
+**Relays**
+- Relay 1–2 (up to 6 on dual base)
+
+**Sensors**
+- Proximity sensor
+- Backlight 1–4 (values: 0=off,1=white,2=yellow,3=both)
+
+Entity IDs include config entry ID → check:
+Settings → Devices → iPano → Entities
+
+---
+
+## Services (`ipano_plus`)
+
+- `wake_screen`
+- `set_backlight`
+- `set_all_backlights`
+- `pulse_backlight`
+- `fade_backlight`
+- `breathing_backlight`
+- `control_relay`
+
+Example:
+
+```yaml
+service: ipano_plus.set_backlight
+data:
+  button: 1
+  color: white
+```
+
+---
 
 ## Events
-The integration fires these HA bus events:
-- `ipano_button_pressed` — payload includes `button`, `action`, `repeat_count`, `key_code`, `timestamp`
-- `ipano_relay_changed` — payload includes `relay`, `state`, `timestamp`
-- `ipano_proximity_detected` — payload includes `detected`, `timestamp`
 
-Use Developer Tools → Events to listen and to build automations.
+The integration fires:
+
+- `ipano_button_pressed`
+- `ipano_relay_changed`
+- `ipano_proximity_detected`
+
+Listen via:
+Developer Tools → Events
+
+---
 
 ## Troubleshooting
-- If the integration won't add, verify network reachability from your Home Assistant host to the panel (port 3124).
-- Enable debug logging for detailed messages:
-  ```yaml
-  logger:
-    default: info
-    logs:
-      custom_components.ipano_plus: debug
+
+If connection fails:
+
+- Verify IP + port reachable
+- Enable debug logging:
+
+```yaml
+logger:
+  default: info
+  logs:
+    custom_components.ipano_plus: debug
+```
+
+Restart Home Assistant and check logs.
+
+---
+
+## Compatibility
+
+- Home Assistant **2024.x+**
+- No external Python packages required
+- Tested on iPano Plus 6" (PD680)
+
+---
+
+## Contributing
+
+See `CONTRIBUTING.md`.
+
+---
+
+## License
+
+MIT
